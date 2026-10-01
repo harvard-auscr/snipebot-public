@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "channel": {
+    "id": "C0MAIN01",
+    "created": 1790197593,
+    "creator": "U0AAA001",
+    "is_org_shared": false,
+    "is_im": false,
+    "context_team_id": "T0TEAM",
+    "updated": 1790198268352,
+    "name": "snipes",
+    "name_normalized": "snipes",
+    "is_channel": true,
+    "is_group": false,
+    "is_mpim": false,
+    "is_private": false,
+    "is_archived": false,
+    "is_general": false,
+    "is_shared": false,
+    "is_ext_shared": false,
+    "unlinked": 0,
+    "is_pending_ext_shared": false,
+    "pending_shared": [],
+    "parent_conversation": null,
+    "purpose": {
+      "value": "",
+      "creator": "",
+      "last_set": 0
+    },
+    "topic": {
+      "value": "",
+      "creator": "",
+      "last_set": 0
+    },
+    "shared_team_ids": [
+      "T0TEAM"
+    ],
+    "pending_connected_team_ids": [],
+    "is_member": true,
+    "last_read": "1790197593.646929",
+    "properties": {
+      "tabs": [
+        {
+          "type": "files",
+          "label": "",
+          "id": "files"
+        }
+      ],
+      "tabz": [
+        {
+          "type": "files"
+        }
+      ]
+    },
+    "previous_names": []
+  }
+}

@@ -1,0 +1,106 @@
+# The L6 rig config template (50 section 7, PLAN section 9 L6).
+#
+# NOT a valid config.yaml on its own: the {{TOKENS}} are placeholders the runner
+# (rig_scenario.render_config) substitutes with IDs resolved through the bot token
+# before the file is loaded. Nothing here is a real workspace, channel or member.
+#
+# Rig-specific knobs (per PLAN section 9 L6, and DECISION 50 section 7): the
+# cooldown is shortened to 60 s (one minute), edit grace is 0 (so the R6 tag edit
+# lands after grace), bot users are allowed as targets,
+# selfie_bonus is on, U_HUMAN is the sole admin (so it may cast the R5 veto under
+# the shipped default veto.by: [admins]) and shares one sibling group with
+# U_TARGET (so the R12/R13 selfie round trip is exercised). U_BOT (the bot's own
+# user, from auth.test) is rostered with no group so the R3 bot target reaches
+# the allow_bots check instead of TARGET_OFF_ROSTER. One report carries a
+# post_to second channel (C_OFF) for R8. These exercise the Slack round trip only;
+# the cooldown value and allow_bots are covered by L2 and unit tests, never here.
+
+enabled: true
+persistence: files            # the rig writes under a temp data dir, never git
+
+slack:
+  channel: "{{C_MAIN}}"       # the watched channel (C_MAIN)
+
+timezone: America/New_York
+
+sync:
+  interval_minutes: 1
+  scan_days: 14
+  history_horizon_days: 80
+  max_deletes_per_run: 5
+  large_movement_rows: 10
+
+semesters:
+  - name: rig-semester
+    start: {{RUN_DATE}}         # the run's own local date (render_config run_date):
+                                # no period is due before today's first anchor (R1)
+    end: {{RUN_END}}            # run date + 30 days (render_config): never before start
+
+rules:
+  cooldown:
+    minutes: 1                # 60 s: shortened for the rig round trip (R2)
+    scope: pair
+    rejected_attempts_reset: false
+  multi_tag: per_target
+  max_targets_per_message: null
+  edit_grace_minutes: 0         # rig: shortened so the R6 tag edit lands after grace
+  max_snipes_per_target_per_day: null
+  allow_self: false
+  allow_bots: true            # rig: a bot user may be a target (R3)
+  count_thread_replies: false
+  count_image_links: false
+  allow_video: false
+  selfie_bonus: true          # rig: the sibfam selfie round trip (R12/R13)
+
+players:
+  count_intra_group: true
+  groups:
+    sibs:                     # U_HUMAN and U_TARGET are one sibling group
+      - "{{U_HUMAN}}"
+      - "{{U_TARGET}}"
+  extras:
+    - "{{U_BOT}}"             # ungrouped: the R3 bot target (allow_bots)
+
+consent:
+  veto:
+    emoji: no_entry_sign      # the R5 veto reaction
+    by:
+      - admins
+  optout_messages: []
+  opted_out: []
+
+admins:
+  - "{{U_HUMAN}}"             # U_HUMAN is the sole admin (casts the R5 veto)
+
+feedback:
+  reactions:
+    counted: white_check_mark
+    cooldown: hourglass_flowing_sand
+    untagged: label
+    not_counted: x
+    selfie: selfie            # the awarded sibfam selfie reaction (the 🤳)
+  review:
+    min_targets: 5
+    emoji: question
+
+reports:
+  - name: daily               # R7: posts to the watched channel (C_MAIN)
+    every: 1d
+    at: "{{DAILY_AT}}"        # 21:00, or later for a late-day start (render_config)
+    sections:
+      - day
+    top_n: 5
+  - name: officers            # R8: post_to the second channel (C_OFF)
+    every: 1d
+    at: "{{OFFICERS_AT}}"     # always 5 min after the daily anchor
+    post_to: "{{C_OFF}}"
+    sections:
+      - day
+    top_n: 5
+
+faces:
+  model_path: snipebot/models/face_detection_yunet_2023mar.onnx
+  fetch_timeout_seconds: 10
+  max_image_bytes: 25000000
+  max_attempts: 3
+  score_threshold: "0.9"

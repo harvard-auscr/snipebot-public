@@ -1,0 +1,99 @@
+[
+  {
+    "type": "header",
+    "text": {
+      "type": "plain_text",
+      "text": "Snipes: 2026-09-18",
+      "emoji": true
+    }
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Today* — 2026-09-18",
+      "verbatim": true
+    },
+    "fields": [
+      {
+        "type": "mrkdwn",
+        "text": "*Snipes*\n3",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Points*\n4",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique snipers*\n2",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique targets*\n2",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Cooldown rejections*\n0",
+        "verbatim": true
+      }
+    ]
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Top snipers*\n1. Alice — 2 pts (2 snipes)\n2. Carol — 1 pts (1 snipes)\n3. Bob — 1 pts (0 snipes)",
+      "verbatim": true
+    }
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Most sniped*\n1. Bob — 2 (top: Alice)\n2. Carol — 1 (top: Alice)",
+      "verbatim": true
+    }
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Groups*\n1. sibA — 1.50 pts/member (3 pts, 2/2 made)\n2. sibB — 1.00 pts/member (1 pts, 1/1 made)",
+      "verbatim": true
+    }
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Top pairs*\n1. Alice → Bob — 1\n2. Alice → Carol — 1\n3. Carol → Bob — 1",
+      "verbatim": true
+    }
+  },
+  {
+    "type": "context",
+    "elements": [
+      {
+        "type": "mrkdwn",
+        "text": ":selfie: sibfam selfie: +1 point each to the poster and every tagged sib in frame.",
+        "verbatim": true
+      }
+    ]
+  }
+]

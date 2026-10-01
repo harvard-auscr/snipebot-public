@@ -1,0 +1,51 @@
+{
+  "user": "U0AAA001",
+  "type": "message",
+  "ts": "1790201458.540619",
+  "bot_id": "B0BOT2",
+  "app_id": "A0APP",
+  "text": "got <@U0AAA002> <@U0AAA003>",
+  "team": "T0TEAM",
+  "bot_profile": {
+    "id": "B0BOT2",
+    "deleted": false,
+    "name": "user-bot",
+    "updated": 1790198068,
+    "app_id": "A0APP",
+    "icons": {
+      "image_36": "https://fixture.invalid/misc/1",
+      "image_48": "https://fixture.invalid/misc/2",
+      "image_72": "https://fixture.invalid/misc/3"
+    },
+    "team_id": "T0TEAM"
+  },
+  "blocks": [
+    {
+      "type": "rich_text",
+      "block_id": "S9t",
+      "elements": [
+        {
+          "type": "rich_text_section",
+          "elements": [
+            {
+              "type": "text",
+              "text": "got "
+            },
+            {
+              "type": "user",
+              "user_id": "U0AAA002"
+            },
+            {
+              "type": "text",
+              "text": " "
+            },
+            {
+              "type": "user",
+              "user_id": "U0AAA003"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

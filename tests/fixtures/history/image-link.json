@@ -1,0 +1,68 @@
+{
+  "user": "U0AAA001",
+  "type": "message",
+  "ts": "1790200884.478039",
+  "edited": {
+    "user": "B0BOT2",
+    "ts": "1790200885.000000"
+  },
+  "bot_id": "B0BOT2",
+  "app_id": "A0APP",
+  "text": "look <https://fixture.invalid/misc/1> <@U0AAA002>",
+  "team": "T0TEAM",
+  "bot_profile": {
+    "id": "B0BOT2",
+    "deleted": false,
+    "name": "user-bot",
+    "updated": 1790198068,
+    "app_id": "A0APP",
+    "icons": {
+      "image_36": "https://fixture.invalid/misc/2",
+      "image_48": "https://fixture.invalid/misc/3",
+      "image_72": "https://fixture.invalid/misc/4"
+    },
+    "team_id": "T0TEAM"
+  },
+  "attachments": [
+    {
+      "from_url": "https://fixture.invalid/misc/1",
+      "image_url": "https://fixture.invalid/misc/1",
+      "image_width": 1280,
+      "image_height": 960,
+      "image_bytes": 284742,
+      "id": 1,
+      "original_url": "https://fixture.invalid/misc/1",
+      "fallback": "1280x960px image",
+      "media_type": "external_link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rich_text",
+      "block_id": "RkiEb",
+      "elements": [
+        {
+          "type": "rich_text_section",
+          "elements": [
+            {
+              "type": "text",
+              "text": "look "
+            },
+            {
+              "type": "link",
+              "url": "https://fixture.invalid/misc/1"
+            },
+            {
+              "type": "text",
+              "text": " "
+            },
+            {
+              "type": "user",
+              "user_id": "U0AAA002"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

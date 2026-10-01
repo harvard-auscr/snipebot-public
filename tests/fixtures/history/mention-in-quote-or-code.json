@@ -1,0 +1,71 @@
+{
+  "type": "message",
+  "user": "U0AAA001",
+  "text": "> quoting <@U0AAA002>\n`ping <@U0AAA003>`\n```\nblock <@U0AAA004>\n```",
+  "ts": "1758210000.001000",
+  "team": "T0TEAM",
+  "subtype": "file_share",
+  "blocks": [
+    {
+      "type": "rich_text",
+      "block_id": "blkqc",
+      "elements": [
+        {
+          "type": "rich_text_quote",
+          "elements": [
+            {
+              "type": "text",
+              "text": "quoting "
+            },
+            {
+              "type": "user",
+              "user_id": "U0AAA002"
+            }
+          ]
+        },
+        {
+          "type": "rich_text_section",
+          "elements": [
+            {
+              "type": "text",
+              "text": "ping <@U0AAA003>",
+              "style": {
+                "code": true
+              }
+            }
+          ]
+        },
+        {
+          "type": "rich_text_preformatted",
+          "elements": [
+            {
+              "type": "text",
+              "text": "block <@U0AAA004>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "id": "F0FILE011",
+      "mimetype": "image/jpeg",
+      "filetype": "jpg",
+      "name": "photo-11.jpg",
+      "size": 2355812,
+      "original_w": 3024,
+      "original_h": 4032,
+      "url_private": "https://fixture.invalid/files/F0FILE011/download/photo.jpg",
+      "url_private_download": "https://fixture.invalid/files/F0FILE011/download/photo.jpg?dl=1",
+      "thumb_1024": "https://fixture.invalid/files/F0FILE011/thumb_1024.jpg",
+      "thumb_1024_w": 768,
+      "thumb_1024_h": 1024,
+      "thumb_960": "https://fixture.invalid/files/F0FILE011/thumb_960.jpg",
+      "thumb_720": "https://fixture.invalid/files/F0FILE011/thumb_720.jpg",
+      "thumb_480": "https://fixture.invalid/files/F0FILE011/thumb_480.jpg",
+      "permalink": null,
+      "permalink_public": null
+    }
+  ]
+}

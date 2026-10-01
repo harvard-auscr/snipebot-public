@@ -1,0 +1,103 @@
+name: admin
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: admin command
+        required: true
+        type: choice
+        options: [veto, unveto, selfie, rejoin, accept-deletes, rules-bump, backfill, restore, reevaluate, purge, recaps-on, recaps-off]
+      ts:              { description: "message ts (veto/unveto/selfie)",   required: false, type: string }
+      user:            { description: "user ID (rejoin/purge/veto --by/selfie --by)", required: false, type: string }
+      not_selfie:      { description: "selfie: mark NOT a selfie", required: false, type: boolean, default: false }
+      count:           { description: "pending count (accept-deletes)",   required: false, type: string }
+      from:            { description: "lower bound (backfill) / commit (restore)", required: false, type: string }
+      effective_from: { description: "date or 'now' (rules-bump)",        required: false, type: string }
+      confirm_purge:   { description: "type ERASE to run purge --rewrite-history", required: false, type: string }
+
+concurrency:
+  group: snipebot-admin            # OWN group, separate from `snipebot` (plan section 8)
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  admin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Stop unless this repo is private   # the ledger, logs and artifact hold IDs and names
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: test "$(gh api "repos/${{ github.repository }}" --jq .private)" = "true"
+      - uses: actions/checkout@v5
+      - uses: actions/checkout@v5
+        with: { ref: data, path: _data, fetch-depth: 0 }
+      - uses: actions/setup-python@v6
+        with: { python-version: "3.11", cache: pip }
+      - run: pip install -r requirements.txt
+      - name: Configure git identity
+        run: |
+          git -C _data config user.name  "snipebot"
+          git -C _data config user.email "snipebot@example.invalid"
+      - name: Run admin command
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SNIPEBOT_DATA_REPO: ${{ github.workspace }}/_data   # data-branch checkout (20 section 8.3 step 1)
+          COMMAND: ${{ inputs.command }}
+          TS: ${{ inputs.ts }}
+          USER_ID: ${{ inputs.user }}
+          NOT_SELFIE: ${{ inputs.not_selfie }}
+          COUNT: ${{ inputs.count }}
+          FROM: ${{ inputs.from }}
+          EFFECTIVE_FROM: ${{ inputs.effective_from }}
+          CONFIRM_PURGE: ${{ inputs.confirm_purge }}
+        run: |
+          set -euo pipefail
+          D="--data-dir _data/data"
+          BY=(); [ -n "$USER_ID" ] && BY=(--by "$USER_ID")     # --by only when non-empty, so the CLI's admins[0] default is reachable
+          case "$COMMAND" in
+            veto)           python -m snipebot $D veto   --ts "$TS" "${BY[@]}" ;;
+            unveto)         python -m snipebot $D unveto --ts "$TS" ;;
+            selfie)
+              N=(); [ "$NOT_SELFIE" = "true" ] && N=(--no)     # not_selfie boolean -> --no
+              python -m snipebot $D selfie --ts "$TS" "${BY[@]}" "${N[@]}" ;;
+            rejoin)         python -m snipebot $D rejoin "$USER_ID" ;;
+            accept-deletes) python -m snipebot $D accept-deletes --count "$COUNT" ;;
+            rules-bump)     python -m snipebot $D rules bump --effective-from "$EFFECTIVE_FROM" ;;
+            backfill)       python -m snipebot $D backfill --from "$FROM" --no-react ;;
+            restore)        python -m snipebot $D restore --from "$FROM" ;;
+            reevaluate)     python -m snipebot $D sync --reevaluate ;;
+            purge)
+              test "$CONFIRM_PURGE" = "ERASE"    # owner sign-off (plan section 8)
+              python -m snipebot $D purge --user "$USER_ID" --rewrite-history --yes ;;
+            recaps-on)      python -m snipebot recaps on ;;     # config.yaml only (E-W4-39)
+            recaps-off)     python -m snipebot recaps off ;;
+          esac
+      - name: Commit config change
+        if: ${{ inputs.command == 'rules-bump' || inputs.command == 'recaps-on' || inputs.command == 'recaps-off' }}
+        env:
+          SNIPEBOT_GIT_AUTHOR: ${{ vars.SNIPEBOT_GIT_AUTHOR }}
+          COMMAND: ${{ inputs.command }}
+          EFFECTIVE_FROM: ${{ inputs.effective_from }}
+        run: |
+          set -euo pipefail
+          AUTHOR="${SNIPEBOT_GIT_AUTHOR:-snipebot <snipebot@example.invalid>}"
+          NAME="${AUTHOR% <*}"
+          EMAIL="${AUTHOR#*<}"; EMAIL="${EMAIL%>}"
+          git config user.name  "$NAME"
+          git config user.email "$EMAIL"
+          git add config.yaml
+          if git diff --cached --quiet; then      # already in that state: nothing to commit
+            echo "config.yaml unchanged"
+            exit 0
+          fi
+          case "$COMMAND" in
+            recaps-on)  MSG="recaps on" ;;
+            recaps-off) MSG="recaps off" ;;
+            *)          MSG="rules bump effective $EFFECTIVE_FROM" ;;
+          esac
+          git commit -m "$MSG"
+          git push
+          echo "commit $(git rev-parse HEAD)"

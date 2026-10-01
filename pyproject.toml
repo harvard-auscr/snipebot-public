@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "snipebot"
+version = "0.1.0"
+description = "Tracks the sniping game in one Slack channel: photos, tags, cooldowns, standings."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "slack-sdk>=3.27,<4",
+    "PyYAML>=6.0,<7",
+    "openpyxl>=3.1,<4",
+    "tzdata>=2024.1",
+    "opencv-python-headless>=4.10,<5",
+    "pillow-heif>=0.16,<1",
+]
+
+[project.scripts]
+snipebot = "snipebot.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["snipebot*"]
+
+[tool.setuptools.package-data]
+snipebot = ["models/*.onnx", "models/*.sha256", "models/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "slow: needs cv2 and the vendored photo fixtures",
+    "rig: needs a real Slack workspace and tokens (opt-in)",
+]
+
+[tool.mutmut]
+# Mirrors tests/mutation/mutmut_config.py (50-test-matrix.md §6.1). mutmut 2.5.1
+# reads paths_to_mutate/runner from this table (or setup.cfg); it does not read
+# them from a nested mutmut_config.py, which it only imports for hook functions
+# off the current working directory, so this is the config mutmut actually uses.
+paths_to_mutate = "snipebot/ts.py,snipebot/parse.py,snipebot/rules.py,snipebot/aggregate.py"
+tests_dir = "tests/"
+runner = ".venv\\Scripts\\python.exe -m pytest -q -x --continue-on-collection-errors tests/mutation/test_mutation_backstop.py tests/test_ts.py tests/test_parse.py tests/test_rules_fixtures.py tests/test_aggregate.py tests/test_report_tables.py tests/oracle/test_oracle_equiv.py tests/oracle/test_properties.py"
+# --continue-on-collection-errors is load-bearing, not cosmetic: mutmut 2.5.1's
+# tests_pass() treats any pytest exit code other than exactly 1 as "tests pass"
+# (`return returncode != 1`, mutmut/__init__.py). A mutation that breaks a
+# module-level call (e.g. test_properties.py's `SEASON = Semester(...,
+# parse_ts(...))`) makes pytest exit 2 (collection error) instead of 1, which
+# mutmut then misreads as SURVIVED even though the mutation is catastrophically
+# broken. This flag makes pytest still execute whatever DID collect and fold
+# the collection error into the normal failure count, so the run exits 1 and
+# mutmut classifies the mutant correctly as KILLED. See tests/mutation/survivors.md.

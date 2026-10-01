@@ -1,0 +1,45 @@
+{
+  "type": "message",
+  "user": "U0AAA001",
+  "text": "clip <@U0AAA002>",
+  "ts": "1758210000.001500",
+  "team": "T0TEAM",
+  "subtype": "file_share",
+  "blocks": [
+    {
+      "type": "rich_text",
+      "block_id": "blk01",
+      "elements": [
+        {
+          "type": "rich_text_section",
+          "elements": [
+            {
+              "type": "text",
+              "text": "clip "
+            },
+            {
+              "type": "user",
+              "user_id": "U0AAA002"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "id": "F0FILE016",
+      "mimetype": "video/mp4",
+      "filetype": "mp4",
+      "name": "clip-16.mp4",
+      "size": 8412006,
+      "original_w": 1920,
+      "original_h": 1080,
+      "url_private": "https://fixture.invalid/files/F0FILE016/download/clip.mp4",
+      "url_private_download": "https://fixture.invalid/files/F0FILE016/download/clip.mp4?dl=1",
+      "thumb_video": "https://fixture.invalid/files/F0FILE016/thumb_video.jpg",
+      "permalink": null,
+      "permalink_public": null
+    }
+  ]
+}

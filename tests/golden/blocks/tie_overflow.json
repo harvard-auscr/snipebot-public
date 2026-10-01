@@ -1,0 +1,56 @@
+[
+  {
+    "type": "header",
+    "text": {
+      "type": "plain_text",
+      "text": "Snipes: 2026-09-18",
+      "emoji": true
+    }
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Today* — 2026-09-18",
+      "verbatim": true
+    },
+    "fields": [
+      {
+        "type": "mrkdwn",
+        "text": "*Snipes*\n60",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Points*\n60",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique snipers*\n60",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique targets*\n1",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Cooldown rejections*\n0",
+        "verbatim": true
+      }
+    ]
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Top snipers*\n1. Sniper00 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n2. Sniper01 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n3. Sniper02 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n4. Sniper03 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n5. Sniper04 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n6. Sniper05 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n7. Sniper06 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n8. Sniper07 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n9. Sniper08 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n10. Sniper09 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n11. Sniper10 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n12. Sniper11 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n13. Sniper12 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n14. Sniper13 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n15. Sniper14 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n16. Sniper15 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n17. Sniper16 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n18. Sniper17 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n19. Sniper18 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n20. Sniper19 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n21. Sniper20 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n22. Sniper21 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n23. Sniper22 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n24. Sniper23 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n25. Sniper24 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n26. Sniper25 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n27. Sniper26 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n28. Sniper27 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n29. Sniper28 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n30. Sniper29 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n31. Sniper30 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n32. Sniper31 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n33. Sniper32 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n34. Sniper33 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n35. Sniper34 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n36. Sniper35 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n37. Sniper36 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n38. Sniper37 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n39. Sniper38 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n40. Sniper39 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n41. Sniper40 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n42. Sniper41 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n43. Sniper42 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n44. Sniper43 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n45. Sniper44 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n46. Sniper45 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n…and +14 others tied at 1",
+      "verbatim": true
+    }
+  }
+]

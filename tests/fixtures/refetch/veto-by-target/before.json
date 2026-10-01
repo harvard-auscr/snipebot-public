@@ -1,0 +1,86 @@
+{
+  "text": "got <@U0AAA002>",
+  "files": [
+    {
+      "id": "F0FILE003",
+      "created": 1790200490,
+      "timestamp": 1790200490,
+      "mimetype": "image/jpeg",
+      "filetype": "jpg",
+      "pretty_type": "JPEG",
+      "user": "U0AAA001",
+      "user_team": "T0TEAM",
+      "editable": false,
+      "size": 284596,
+      "mode": "hosted",
+      "is_external": false,
+      "external_type": "",
+      "is_public": true,
+      "public_url_shared": false,
+      "display_as_bot": false,
+      "username": "",
+      "name": "photo-3.jpg",
+      "title": "photo-3",
+      "is_modified_by_ai": false,
+      "url_private": "https://fixture.invalid/files/F0FILE003/download/photo.jpg",
+      "url_private_download": "https://fixture.invalid/files/F0FILE003/download/photo.jpg?dl=1",
+      "media_display_type": "unknown",
+      "thumb_64": "https://fixture.invalid/files/F0FILE003/thumb_64.jpg",
+      "thumb_80": "https://fixture.invalid/files/F0FILE003/thumb_80.jpg",
+      "thumb_360": "https://fixture.invalid/files/F0FILE003/thumb_360.jpg",
+      "thumb_360_w": 360,
+      "thumb_360_h": 270,
+      "thumb_480": "https://fixture.invalid/files/F0FILE003/thumb_480.jpg",
+      "thumb_480_w": 480,
+      "thumb_480_h": 360,
+      "thumb_160": "https://fixture.invalid/files/F0FILE003/thumb_160.jpg",
+      "thumb_720": "https://fixture.invalid/files/F0FILE003/thumb_720.jpg",
+      "thumb_720_w": 720,
+      "thumb_720_h": 540,
+      "thumb_800": "https://fixture.invalid/files/F0FILE003/thumb_800",
+      "thumb_800_w": 800,
+      "thumb_800_h": 600,
+      "thumb_960": "https://fixture.invalid/files/F0FILE003/thumb_960.jpg",
+      "thumb_960_w": 960,
+      "thumb_960_h": 720,
+      "thumb_1024": "https://fixture.invalid/files/F0FILE003/thumb_1024.jpg",
+      "thumb_1024_w": 1024,
+      "thumb_1024_h": 768,
+      "original_w": 1280,
+      "original_h": 960,
+      "thumb_tiny": "AAAA",
+      "permalink": null,
+      "permalink_public": null,
+      "is_starred": false,
+      "skipped_shares": true,
+      "has_rich_preview": false,
+      "file_access": "visible"
+    }
+  ],
+  "upload": true,
+  "user": "U0AAA001",
+  "display_as_bot": false,
+  "blocks": [
+    {
+      "type": "rich_text",
+      "block_id": "w3KCr",
+      "elements": [
+        {
+          "type": "rich_text_section",
+          "elements": [
+            {
+              "type": "text",
+              "text": "got "
+            },
+            {
+              "type": "user",
+              "user_id": "U0AAA002"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "type": "message",
+  "ts": "1790200491.677399"
+}

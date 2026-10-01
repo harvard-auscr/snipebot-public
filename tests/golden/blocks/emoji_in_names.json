@@ -1,0 +1,67 @@
+[
+  {
+    "type": "header",
+    "text": {
+      "type": "plain_text",
+      "text": "Snipes: 2026-09-18",
+      "emoji": true
+    }
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Today* — 2026-09-18",
+      "verbatim": true
+    },
+    "fields": [
+      {
+        "type": "mrkdwn",
+        "text": "*Snipes*\n2",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Points*\n2",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique snipers*\n2",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique targets*\n2",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Cooldown rejections*\n0",
+        "verbatim": true
+      }
+    ]
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Top snipers*\n1. Zoë 🎯 &lt;b&amp;d&gt; — 1 pts (1 snipes)\n2. Alice — 1 pts (1 snipes)",
+      "verbatim": true
+    }
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Top pairs*\n1. Zoë 🎯 &lt;b&amp;d&gt; → Alice — 1\n2. Alice → Zoë 🎯 &lt;b&amp;d&gt; — 1",
+      "verbatim": true
+    }
+  }
+]

@@ -1,0 +1,47 @@
+name: sync
+on:
+  schedule:
+    - cron: "7,37 * * * *"       # every 30 min (owner default, plan section 13), off the :00/:30 peak when GitHub delays or drops scheduled runs
+  workflow_dispatch: {}          # ad-hoc manual run; no inputs
+
+concurrency:
+  group: snipebot                # shared by every scheduled/dispatch sync
+  cancel-in-progress: false      # never kill a running sync; GitHub keeps one queued
+
+permissions:
+  contents: write                # push the data branch
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15                    # a hung run frees the concurrency slot instead of holding it for 6 h
+    env:
+      SNIPEBOT_DATA_REPO: _data            # data-branch checkout; never the code tree (20 s8.3, 40 s6.1)
+    steps:
+      - name: Stop unless this repo is private   # the ledger, logs and artifact hold IDs and names
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: test "$(gh api "repos/${{ github.repository }}" --jq .private)" = "true"
+      - name: Checkout code
+        uses: actions/checkout@v5          # default branch = code
+      - name: Checkout data branch
+        uses: actions/checkout@v5
+        with:
+          ref: data                        # orphan branch holding data/
+          path: _data
+          fetch-depth: 0                   # full history for daily amend / --force-with-lease
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip                       # keyed on requirements.txt (exact pins)
+      - name: Install runtime deps
+        run: pip install -r requirements.txt
+      - name: Configure git identity
+        run: |
+          git -C _data config user.name  "snipebot"
+          git -C _data config user.email "snipebot@example.invalid"
+      - name: Sync
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: python -m snipebot sync --data-dir _data/data

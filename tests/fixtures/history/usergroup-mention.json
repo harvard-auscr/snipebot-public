@@ -1,0 +1,54 @@
+{
+  "type": "message",
+  "user": "U0AAA001",
+  "text": "<!subteam^S0TEAM01> got <@U0AAA002>",
+  "ts": "1758210000.001100",
+  "team": "T0TEAM",
+  "subtype": "file_share",
+  "blocks": [
+    {
+      "type": "rich_text",
+      "block_id": "blk01",
+      "elements": [
+        {
+          "type": "rich_text_section",
+          "elements": [
+            {
+              "type": "usergroup",
+              "usergroup_id": "S0TEAM01"
+            },
+            {
+              "type": "text",
+              "text": " got "
+            },
+            {
+              "type": "user",
+              "user_id": "U0AAA002"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "id": "F0FILE012",
+      "mimetype": "image/jpeg",
+      "filetype": "jpg",
+      "name": "photo-12.jpg",
+      "size": 2355812,
+      "original_w": 3024,
+      "original_h": 4032,
+      "url_private": "https://fixture.invalid/files/F0FILE012/download/photo.jpg",
+      "url_private_download": "https://fixture.invalid/files/F0FILE012/download/photo.jpg?dl=1",
+      "thumb_1024": "https://fixture.invalid/files/F0FILE012/thumb_1024.jpg",
+      "thumb_1024_w": 768,
+      "thumb_1024_h": 1024,
+      "thumb_960": "https://fixture.invalid/files/F0FILE012/thumb_960.jpg",
+      "thumb_720": "https://fixture.invalid/files/F0FILE012/thumb_720.jpg",
+      "thumb_480": "https://fixture.invalid/files/F0FILE012/thumb_480.jpg",
+      "permalink": null,
+      "permalink_public": null
+    }
+  ]
+}

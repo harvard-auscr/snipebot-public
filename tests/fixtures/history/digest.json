@@ -1,0 +1,21 @@
+{
+  "type": "message",
+  "subtype": "bot_message",
+  "bot_id": "B0BOT",
+  "app_id": "A0APP",
+  "user": "U0BOT01",
+  "team": "T0TEAM",
+  "text": "Daily snipe standings",
+  "ts": "1758210000.001700",
+  "metadata": {
+    "event_type": "snipe_digest",
+    "event_payload": {
+      "report": "daily",
+      "period_key": "daily:2026-09-18",
+      "channel": "C0MAIN01",
+      "semester": "fall-2026",
+      "numbers_hash": "0449a71bb9c85091015d3eb968b36993d4bae1b78743949745878262c1c7e9cd",
+      "revision": 0
+    }
+  }
+}

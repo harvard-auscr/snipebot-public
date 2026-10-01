@@ -1,0 +1,24 @@
+# virtualenv and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.hypothesis/
+.mutmut-cache
+mutants/
+*.egg-info/
+build/
+dist/
+
+# secrets and local state (tokens come from the environment only)
+.env
+data/
+exports/
+# local photo review: face boxes and the owner's labels (snipebot review)
+/review/
+# the real-id half of the fixture scrub map (tools/scrub.py)
+tests/fixtures/scrub_map.local.json
+
+# editor
+.vscode/
+.idea/

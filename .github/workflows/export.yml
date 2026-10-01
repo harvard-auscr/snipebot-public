@@ -1,0 +1,52 @@
+name: export
+on:
+  schedule:
+    - cron: "17 0 * * 1"         # Mondays 00:17 UTC = Sunday evening in New York; off the :00 peak
+  workflow_dispatch: {}          # on demand: Actions tab -> export -> Run workflow; no inputs
+
+concurrency:
+  group: snipebot-export         # own group: never queues behind (or blocks) a sync or an admin run
+  cancel-in-progress: false
+
+permissions:
+  contents: read                 # reads code and the data branch; commits and pushes nothing
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Stop unless this repo is private   # the ledger, logs and artifact hold IDs and names
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: test "$(gh api "repos/${{ github.repository }}" --jq .private)" = "true"
+      - name: Checkout code
+        uses: actions/checkout@v5          # default branch = code + config.yaml
+      - name: Checkout data branch
+        uses: actions/checkout@v5
+        with:
+          ref: data                        # orphan branch holding data/
+          path: _data
+          fetch-depth: 1                   # read-only: the tip is enough
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install runtime deps
+        run: pip install -r requirements.txt
+      - name: Refresh names
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        # users.json under _data/data is a runner-local cache, never committed; stdout lists
+        # display names, so it is discarded and never reaches the log
+        run: python -m snipebot roster --data-dir _data/data > /dev/null
+      - name: Export
+        run: python -m snipebot export --data-dir _data/data --out exports
+      - name: Upload standings
+        uses: actions/upload-artifact@v6
+        with:
+          name: standings                  # <semester>_<table>.csv x6 + <semester>.xlsx
+          path: exports/
+          retention-days: 90
+          if-no-files-found: error

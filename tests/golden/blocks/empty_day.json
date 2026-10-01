@@ -1,0 +1,45 @@
+[
+  {
+    "type": "header",
+    "text": {
+      "type": "plain_text",
+      "text": "Snipes: 2026-09-18",
+      "emoji": true
+    }
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Today* — 2026-09-18\n_No snipes recorded._",
+      "verbatim": true
+    },
+    "fields": [
+      {
+        "type": "mrkdwn",
+        "text": "*Snipes*\n0",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Points*\n0",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique snipers*\n0",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique targets*\n0",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Cooldown rejections*\n0",
+        "verbatim": true
+      }
+    ]
+  }
+]

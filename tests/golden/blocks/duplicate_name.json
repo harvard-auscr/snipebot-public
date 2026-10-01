@@ -1,0 +1,67 @@
+[
+  {
+    "type": "header",
+    "text": {
+      "type": "plain_text",
+      "text": "Snipes: 2026-09-18",
+      "emoji": true
+    }
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Today* — 2026-09-18",
+      "verbatim": true
+    },
+    "fields": [
+      {
+        "type": "mrkdwn",
+        "text": "*Snipes*\n3",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Points*\n3",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique snipers*\n3",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique targets*\n2",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Cooldown rejections*\n0",
+        "verbatim": true
+      }
+    ]
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Top snipers*\n1. Sam Rivers (sibA) — 1 pts (1 snipes)\n2. Sam Rivers (sibB) — 1 pts (1 snipes)\n3. Riley Quinn — 1 pts (1 snipes)",
+      "verbatim": true
+    }
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Most sniped*\n1. Riley Quinn — 2 (top: Sam Rivers)\n2. Sam Rivers — 1 (top: Riley Quinn)",
+      "verbatim": true
+    }
+  }
+]

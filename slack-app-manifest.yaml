@@ -1,0 +1,28 @@
+# Slack app manifest for the snipe tracker (spec 40 §7.3).
+# Internal, single-workspace, undistributed app. The Slack-facing name is set here and
+# nowhere else; the code learns its own identity from auth.test at runtime.
+#
+# Private watched or post_to channel: add groups:history and groups:read, and invite the
+# app. The rig's user token (files:write, chat:write, reactions:write as a human) is
+# granted at install time on the throwaway workspace, not here.
+display_information:
+  name: Shoutout Bot
+  description: Keeps score in a Slack sniping game.
+features:
+  bot_user:
+    display_name: Shoutout Bot
+    always_online: false
+oauth_config:
+  scopes:
+    bot:
+      - channels:history      # messages with their files and reactions arrays
+      - channels:read         # doctor, roster (conversations.info, conversations.members)
+      - users:read            # display names, is_bot
+      - reactions:write       # feedback reactions
+      - reactions:read        # reactions.get when a users list is truncated
+      - chat:write            # digests and their chat.update revisions
+      - files:read            # fetch sibfam-tagged image renditions for the selfie bonus
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

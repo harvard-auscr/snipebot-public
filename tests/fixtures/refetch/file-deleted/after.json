@@ -1,0 +1,39 @@
+{
+  "text": "got <@U0AAA002>",
+  "files": [
+    {
+      "id": "F0FILE002",
+      "file_access": "file_not_found",
+      "created": 0,
+      "timestamp": 0,
+      "user": "U0BOT01",
+      "filetype": "jpg"
+    }
+  ],
+  "upload": true,
+  "user": "U0AAA001",
+  "display_as_bot": false,
+  "blocks": [
+    {
+      "type": "rich_text",
+      "block_id": "47ST=",
+      "elements": [
+        {
+          "type": "rich_text_section",
+          "elements": [
+            {
+              "type": "text",
+              "text": "got "
+            },
+            {
+              "type": "user",
+              "user_id": "U0AAA002"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "type": "message",
+  "ts": "1790200488.381199"
+}

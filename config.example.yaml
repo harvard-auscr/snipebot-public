@@ -1,0 +1,86 @@
+# snipebot configuration — every key with its default and a one-line note.
+# Placeholder IDs (U0AAA001, C0MAIN) stand in for real Slack IDs.
+
+enabled: true                 # false pauses the bot without deleting anything
+recaps: false                 # digests are not posted in Slack; switch with "snipebot recaps on|off" or the admin workflow; standings data comes from the weekly export workflow
+persistence: git              # git = data-branch commit + push; files = temp-file rename
+
+slack:
+  channel: C0MAINAA           # the one watched channel (a channel ID, never a name)
+
+timezone: America/New_York    # IANA zone; every day bucket and semester edge uses it
+
+sync:
+  interval_minutes: 15        # how often the channel is synced (>= 1)
+  scan_days: 14               # how far back each run rescans (>= 1)
+  history_horizon_days: 80    # null = no horizon, else >= scan_days
+  max_deletes_per_run: 5      # cap on inferred deletes per run (>= 0)
+  large_movement_rows: 10     # verdict changes that seal their own commit (>= 0)
+
+semesters:                    # non-empty; closed [start, end], no overlap
+  - name: fall-2026
+    start: 2026-09-01         # 00:00:00 local, inclusive
+    end: 2026-12-20           # 23:59:59 local, inclusive
+
+rules:                        # one mapping (undated), or a list with effective_from
+  cooldown:
+    minutes: 15               # per-pair cooldown in minutes (>= 0)
+    scope: pair               # pair | target
+    rejected_attempts_reset: false   # a rejected attempt does not restart the clock
+  multi_tag: per_target       # per_target | single
+  max_targets_per_message: null      # null = no cap, else >= 1
+  edit_grace_minutes: 10      # a tag edited in within this window still counts (>= 0)
+  max_snipes_per_target_per_day: null  # null = no cap, else >= 1
+  allow_self: false           # sniping yourself never counts
+  allow_bots: false           # bot targets never count
+  count_thread_replies: false # only top-level posts are candidates; true adds replies
+                              # also sent to the channel (Slack's channel history never
+                              # returns other thread replies)
+  count_image_links: false    # only uploaded images, not linked ones
+  allow_video: false          # video attachments do not count as photos
+  selfie_bonus: true          # sibfam selfies score the participation bonus
+
+players:
+  mode: listed                # only the people listed below play; "auto" makes every
+                              # non-bot user a player (extras must then be empty; groups
+                              # and their from: dates still apply to grouped members)
+  count_intra_group: true     # snipes within a sibling group still count
+  groups:                     # group name -> members (each a UserID or {id, from})
+    reds:
+      - U0AAA001
+      - id: U0AAA002
+        from: 2026-09-15      # a late joiner counts only from this date
+  extras:                     # players in no group
+    - U0BBB001
+
+consent:
+  veto:
+    emoji: x                  # the veto reaction (admins react to void a snipe)
+    by:                       # who may veto; defaults to [admins]
+      - admins
+  optout_messages: []         # pinned opt-out message ts values (SlackTs strings);
+                              # every reactor opts out, so the poster must not react
+  opted_out: []               # manual opt-out seeds (UserIDs not in the channel)
+
+admins: []                    # user IDs who may veto and confirm selfies
+
+feedback:                     # every emoji name here and under consent.veto must be
+                              # Slack's canonical name, not an alias
+  reactions:                  # exactly these five keys
+    counted: white_check_mark          # placed on a counted snipe
+    cooldown: hourglass_flowing_sand   # placed on a cooldown rejection
+    untagged: label           # placed on an untagged photo (built-in tag); null stays quiet
+    not_counted: no_entry_sign  # placed on a photo that does not count
+    selfie: selfie            # placed on an awarded sibfam selfie; null stays quiet
+  review:
+    min_targets: 5            # flag a photo tagging this many people; null never flags
+    emoji: question           # the manual-review reaction; null uses the audit list only
+
+reports: []                   # standings posts; each with name, every, at, sections
+
+faces:                        # operational selfie detector; may be omitted entirely
+  model_path: snipebot/models/face_detection_yunet_2023mar.onnx  # vendored YuNet ONNX
+  fetch_timeout_seconds: 10   # per-image rendition fetch timeout (>= 1)
+  max_image_bytes: 25000000   # rendition size cap in bytes (>= 1)
+  max_attempts: 3             # detection retries per message (>= 1)
+  score_threshold: "0.9"      # decimal string in [0.5, 1.0]; parsed only in the detector

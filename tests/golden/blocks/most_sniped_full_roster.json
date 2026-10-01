@@ -1,0 +1,56 @@
+[
+  {
+    "type": "header",
+    "text": {
+      "type": "plain_text",
+      "text": "Snipes: 2026-09-18",
+      "emoji": true
+    }
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Today* — 2026-09-18",
+      "verbatim": true
+    },
+    "fields": [
+      {
+        "type": "mrkdwn",
+        "text": "*Snipes*\n24",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Points*\n24",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique snipers*\n24",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique targets*\n24",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Cooldown rejections*\n0",
+        "verbatim": true
+      }
+    ]
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Most sniped*\n1. Member 01 — 1 (top: Member 00)\n1. Member 02 — 1 (top: Member 01)\n1. Member 03 — 1 (top: Member 02)\n1. Member 04 — 1 (top: Member 03)\n1. Member 05 — 1 (top: Member 04)\n1. Member 06 — 1 (top: Member 05)\n1. Member 07 — 1 (top: Member 06)\n1. Member 08 — 1 (top: Member 07)\n1. Member 09 — 1 (top: Member 08)\n1. Member 10 — 1 (top: Member 09)\n1. Member 11 — 1 (top: Member 10)\n1. Member 12 — 1 (top: Member 11)\n1. Member 13 — 1 (top: Member 12)\n1. Member 14 — 1 (top: Member 13)\n1. Member 15 — 1 (top: Member 14)\n1. Member 16 — 1 (top: Member 15)\n1. Member 17 — 1 (top: Member 16)\n1. Member 18 — 1 (top: Member 17)\n1. Member 19 — 1 (top: Member 18)\n1. Member 20 — 1 (top: Member 19)\n1. Member 21 — 1 (top: Member 20)\n1. Member 22 — 1 (top: Member 21)\n1. Member 23 — 1 (top: Member 22)\n1. Member 00 — 1 (top: Member 23)",
+      "verbatim": true
+    }
+  }
+]

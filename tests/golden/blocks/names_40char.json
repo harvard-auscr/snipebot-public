@@ -1,0 +1,89 @@
+[
+  {
+    "type": "header",
+    "text": {
+      "type": "plain_text",
+      "text": "Snipes: 2026-09-18",
+      "emoji": true
+    }
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Today* — 2026-09-18",
+      "verbatim": true
+    },
+    "fields": [
+      {
+        "type": "mrkdwn",
+        "text": "*Snipes*\n4",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Points*\n4",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique snipers*\n3",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Unique targets*\n3",
+        "verbatim": true
+      },
+      {
+        "type": "mrkdwn",
+        "text": "*Cooldown rejections*\n0",
+        "verbatim": true
+      }
+    ]
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Top snipers*\n1. Aurelius xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 2 pts (2 snipes)\n2. Bernadette xxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)\n3. Cassiopeia xxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 pts (1 snipes)",
+      "verbatim": true
+    }
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Most sniped*\n1. Cassiopeia xxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 2 (top: Aurelius xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)\n2. Demetrius xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 (top: Aurelius xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)\n2. Aurelius xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1 (top: Cassiopeia xxxxxxxxxxxxxxxxxxxxxxxxxxxxx)",
+      "verbatim": true
+    }
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Groups*\n1. sibA — 1.50 pts/member (3 pts, 3/2 made)\n2. sibB — 0.50 pts/member (1 pts, 1/2 made)",
+      "verbatim": true
+    }
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section",
+    "text": {
+      "type": "mrkdwn",
+      "text": "*Top pairs*\n1. Aurelius xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx → Cassiopeia xxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1\n2. Aurelius xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx → Demetrius xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1\n3. Bernadette xxxxxxxxxxxxxxxxxxxxxxxxxxxxx → Cassiopeia xxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1\n4. Cassiopeia xxxxxxxxxxxxxxxxxxxxxxxxxxxxx → Aurelius xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx — 1",
+      "verbatim": true
+    }
+  }
+]

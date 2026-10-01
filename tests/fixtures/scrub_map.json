@@ -1,0 +1,23 @@
+{
+  "A0APP": "A0APP",
+  "B0BOT": "B0BOT",
+  "B0BOT2": "B0BOT2",
+  "C0MAIN01": "C0MAIN01",
+  "C0OFF001": "C0OFF001",
+  "F0FILE001": "F0FILE001",
+  "F0FILE002": "F0FILE002",
+  "F0FILE003": "F0FILE003",
+  "F0FILE004": "F0FILE004",
+  "S0TEAM01": "S0TEAM01",
+  "T0TEAM": "T0TEAM",
+  "U0AAA001": "U0AAA001",
+  "U0AAA002": "U0AAA002",
+  "U0AAA003": "U0AAA003",
+  "U0AAA004": "U0AAA004",
+  "U0AAA009": "U0AAA009",
+  "U0AAA010": "U0AAA010",
+  "U0AAA011": "U0AAA011",
+  "U0AAA099": "U0AAA099",
+  "U0BOT01": "U0BOT01",
+  "_note": "The placeholder vocabulary: every placeholder the fixtures use, mapped to itself. The real-id half of the map lives in scrub_map.local.json, which is never committed. Written by tools/scrub.py; never edit by hand."
+}
